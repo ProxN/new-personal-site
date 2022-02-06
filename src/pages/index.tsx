@@ -1,6 +1,11 @@
+import { Layout } from '@components/Layout';
+
 const Index = () => {
-  console.log('test');
-  return <div>hello world!</div>;
+  return (
+    <Layout>
+      <div>hello world</div>
+    </Layout>
+  );
 };
 
 export default Index;
