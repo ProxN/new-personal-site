@@ -15,9 +15,9 @@ export const HeaderContainer = styled('header', {
   position: 'fixed',
   width: '100%',
   height: '7rem',
-  zIndex: '$1',
+  zIndex: '$4',
   backgroundColor: '$background',
-  boxShadow: '0 .8px 2.4px 0px rgba(0,0,0,.14)',
+  boxShadow: '0 .9px 2.4px 0px rgba(0,0,0,.24)',
 });
 
 export const HeaderContent = styled('div', {
