@@ -1,13 +1,18 @@
+import * as AccessibleIcon from '@radix-ui/react-accessible-icon';
 import { styled } from '@stitches';
 
-export const ProjectContainer = styled('div', {
+export const ProjectContainer = styled('a', {
   backgroundImage: '$gradient2',
   borderRadius: '$sm',
   overflow: 'hidden',
   border: '1px solid $borderColor',
+
+  '&:focus': {
+    ring: '0 0 2px',
+  },
 });
 
-export const ProjectImage = styled('a', {
+export const ProjectImage = styled('div', {
   cursor: 'pointer',
   position: 'relative',
   display: 'block',
@@ -30,6 +35,8 @@ export const ProjectInfo = styled('div', {
   padding: '1.6rem',
 });
 
+export const IconContainer = styled(AccessibleIcon.Root, {});
+
 export const ProjectHeader = styled('div', {
   marginBottom: '1rem',
   display: 'flex',
@@ -47,11 +54,13 @@ export const ProjectTitle = styled('h3', {
 
 export const PorjectDescription = styled('p', {
   fontSize: '1.4rem',
+  color: '$forground',
 });
 
 export const ProjectLink = styled('a', {
   cursor: 'pointer',
   color: '$white',
+  fontSize: '2.4rem',
 
   '&:first-child': {
     marginRight: '2rem',
@@ -64,6 +73,7 @@ export const ProjectTools = styled('div', {
   alignItems: 'center',
   flexWrap: 'wrap',
   columnGap: '3.4rem',
+  color: '$forground',
 });
 
 export const ProjectToolName = styled('div', {

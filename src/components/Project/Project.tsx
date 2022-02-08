@@ -9,51 +9,56 @@ import {
   PorjectDescription,
   ProjectToolName,
   ProjectTools,
+  IconContainer,
 } from './Project.styles';
 import GithubSVG from '@assets/logo-github.svg';
 import LinkSVG from '@assets/open-outline.svg';
 
-export const Project = () => {
+type Link = {
+  type: string;
+  url: string;
+};
+interface ProjectProps {
+  title: string;
+  image: string;
+  description: string;
+  tech: string[];
+  links: Link[];
+}
+
+export const Project: React.FC<ProjectProps> = ({
+  description,
+  image,
+  links,
+  tech,
+  title,
+}) => {
   return (
-    <ProjectContainer>
+    <ProjectContainer href={links[1].url} target='_blank'>
       <ProjectImage>
-        <Image
-          src='/fortnite_tracker.png'
-          alt='dfg'
-          layout='fill'
-          objectFit='cover'
-        />
+        <Image src={image} alt='dfg' layout='fill' objectFit='cover' />
       </ProjectImage>
       <ProjectInfo>
         <ProjectHeader>
-          <ProjectTitle>Fortnite Stats</ProjectTitle>
+          <ProjectTitle>{title}</ProjectTitle>
           <div>
-            <ProjectLink>
-              <GithubSVG />
-            </ProjectLink>
-            <ProjectLink>
-              <LinkSVG />
-            </ProjectLink>
+            {links.map((el) => (
+              <ProjectLink key={el.url} href={el.url} target='_blank'>
+                <IconContainer label={el.type}>
+                  {el.type === 'code' ? <GithubSVG /> : <LinkSVG />}
+                </IconContainer>
+              </ProjectLink>
+            ))}
           </div>
         </ProjectHeader>
-        <PorjectDescription>
-          An application where users can look upon their Fortnite stats and view
-          current items shop, I built this app using vanilla javascript and
-          saas.
-        </PorjectDescription>
+        <PorjectDescription>{description}</PorjectDescription>
         <ProjectTools>
-          <ProjectToolName>
-            <span />
-            Javascript
-          </ProjectToolName>
-          <ProjectToolName>
-            <span />
-            Sass
-          </ProjectToolName>
-          <ProjectToolName>
-            <span />
-            Webpack
-          </ProjectToolName>
+          {tech.map((el) => (
+            <ProjectToolName key={`work-${el}`}>
+              <span />
+              {el}
+            </ProjectToolName>
+          ))}
         </ProjectTools>
       </ProjectInfo>
     </ProjectContainer>

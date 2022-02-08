@@ -12,6 +12,16 @@ import MailSVG from '@assets/mail-outline.svg';
 import LinkedinSVG from '@assets/logo-linkedin.svg';
 import TwitterSVG from '@assets/logo-twitter.svg';
 
+const links = [
+  { name: 'email', Icon: MailSVG, link: 'mailto:kanoundev@gmail.com' },
+  {
+    name: 'linkedin',
+    Icon: LinkedinSVG,
+    link: 'https://www.linkedin.com/in/ayoubidelkanoun/',
+  },
+  { name: 'twitter', Icon: TwitterSVG, link: 'https://twitter.com/ProxNN_' },
+];
+
 export const ContactSection = () => {
   return (
     <ContactContainer>
@@ -26,30 +36,16 @@ export const ContactSection = () => {
           </ContactText>
           <ContactText>Let&apos;s get in touch and talk.</ContactText>
           <ContactLinks>
-            <li>
-              <ContactLink>
-                <ContactIcon>
-                  <MailSVG />
-                </ContactIcon>
-                Email
-              </ContactLink>
-            </li>
-            <li>
-              <ContactLink>
-                <ContactIcon>
-                  <LinkedinSVG />
-                </ContactIcon>
-                Linkedin
-              </ContactLink>
-            </li>
-            <li>
-              <ContactLink>
-                <ContactIcon>
-                  <TwitterSVG />
-                </ContactIcon>
-                Twitter
-              </ContactLink>
-            </li>
+            {links.map(({ name, link, Icon }) => (
+              <li key={`contact-${name}`}>
+                <ContactLink href={link} target='_blank'>
+                  <ContactIcon>
+                    <Icon />
+                  </ContactIcon>
+                  {name}
+                </ContactLink>
+              </li>
+            ))}
           </ContactLinks>
         </ContactInfo>
       </Container>

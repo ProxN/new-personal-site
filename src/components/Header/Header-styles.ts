@@ -12,10 +12,12 @@ const fadeOut = keyframes({
 });
 
 export const HeaderContainer = styled('header', {
-  position: 'relative',
+  position: 'fixed',
   width: '100%',
   height: '7rem',
   zIndex: '$1',
+  backgroundColor: '$background',
+  boxShadow: '0 .8px 2.4px 0px rgba(0,0,0,.14)',
 });
 
 export const HeaderContent = styled('div', {
@@ -235,6 +237,6 @@ export const ResumeLink = styled('a', NavLink, {
   },
 
   '& > span': {
-    marginRight: '.4rem',
+    marginRight: '.6rem',
   },
 });

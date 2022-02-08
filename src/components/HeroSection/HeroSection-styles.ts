@@ -1,8 +1,9 @@
 import { styled } from '@stitches';
+import * as AccessibleIcon from '@radix-ui/react-accessible-icon';
 
 export const HeroContainer = styled('section', {
-  height: 'calc(100vh - 7rem)',
-  paddingTop: '12rem',
+  height: '100vh',
+  paddingTop: '22rem',
 });
 
 export const HeroInfo = styled('div', {
@@ -94,7 +95,7 @@ export const Icons = styled('div', {
   columnGap: '1.8rem',
 });
 
-export const IconBox = styled('div', {
+export const IconBox = styled('a', {
   display: 'flex',
   color: '$forground',
   cursor: 'pointer',
@@ -104,7 +105,13 @@ export const IconBox = styled('div', {
   '&:hover': {
     color: '$white',
   },
+
+  '&:focus': {
+    ring: '0 0 0 2px',
+  },
 });
+
+export const IconSVG = styled(AccessibleIcon.Root, {});
 
 export const LogoShape = styled('div', {
   position: 'absolute',

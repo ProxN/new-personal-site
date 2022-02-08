@@ -14,6 +14,7 @@ const Css = globalCss({
     height: '100%',
     width: '100%',
     fontSize: '10px',
+    scrollBehavior: 'smooth',
   },
   body: {
     lineHeight: 1.45,

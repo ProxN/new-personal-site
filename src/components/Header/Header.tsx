@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import NextLink from 'next/link';
 import {
   Drawer,
   DrawerContent,
@@ -34,13 +35,19 @@ export const Header = () => {
         <Nav>
           <NavLinks>
             <NavItem>
-              <NavLink href='#work'>Work</NavLink>
+              <NextLink href='/#work'>
+                <NavLink tabIndex={0}>Work</NavLink>
+              </NextLink>
             </NavItem>
+            {/* <NavItem>
+              <NextLink href='/#work'>
+                <NavLink tabIndex={0}>Blog</NavLink>
+              </NextLink>
+            </NavItem> */}
             <NavItem>
-              <NavLink href='#blog'>Blog</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href='#about'>About</NavLink>
+              <NextLink href='/#about'>
+                <NavLink tabIndex={0}>About</NavLink>
+              </NextLink>
             </NavItem>
             <NavItem>
               <ResumeLink>
@@ -63,13 +70,17 @@ export const Header = () => {
               <NavMobile>
                 <NavLinks>
                   <NavItem>
-                    <NavLink href='#work'>Work</NavLink>
+                    <NextLink href='/#work'>
+                      <NavLink tabIndex={0}>Work</NavLink>
+                    </NextLink>
                   </NavItem>
-                  <NavItem>
+                  {/* <NavItem>
                     <NavLink href='#blog'>Blog</NavLink>
-                  </NavItem>
+                  </NavItem> */}
                   <NavItem>
-                    <NavLink href='#about'>About</NavLink>
+                    <NextLink href='/#about'>
+                      <NavLink tabIndex={0}>About</NavLink>
+                    </NextLink>
                   </NavItem>
                   <NavItem>
                     <ResumeLink>Resume</ResumeLink>

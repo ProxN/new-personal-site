@@ -16,7 +16,7 @@ const skills = [
 
 export const AboutSection = () => {
   return (
-    <AboutContainer>
+    <AboutContainer id='about'>
       <Container>
         <Heading>
           <span>About</span> Me

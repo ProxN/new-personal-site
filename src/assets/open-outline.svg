@@ -1,7 +1,7 @@
-<svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg focusable="false" aria-hidden="true" height="1em" width="1em" viewBox="0 0 512 512" fill="none"
+    xmlns="http://www.w3.org/2000/svg">
+    <title>Open</title>
     <path
-        d="M18.9644 11.2087V19.8337C18.9644 20.08 18.9159 20.3238 18.8216 20.5513C18.7274 20.7788 18.5893 20.9855 18.4152 21.1596C18.2411 21.3337 18.0344 21.4718 17.8069 21.566C17.5794 21.6602 17.3356 21.7087 17.0894 21.7087H5.83936C5.34207 21.7087 4.86516 21.5112 4.51353 21.1596C4.1619 20.8079 3.96436 20.331 3.96436 19.8337V8.58374C3.96436 8.08646 4.1619 7.60955 4.51353 7.25792C4.86516 6.90628 5.34207 6.70874 5.83936 6.70874H13.69"
-        stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
-    <path d="M16.7144 3.70874H21.9644V8.95874" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
-    <path d="M11.4644 14.2087L21.5894 4.08374" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+        d="M384 224v184a40 40 0 01-40 40H104a40 40 0 01-40-40V168a40 40 0 0140-40h167.48M336 64h112v112M224 288L440 72"
+        fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" />
 </svg>
