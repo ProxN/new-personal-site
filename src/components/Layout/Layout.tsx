@@ -1,10 +1,18 @@
-import { GlobalCss } from '../GlobalCss';
+import { Footer } from '@components/Footer';
+import { Header } from '@components/Header';
+import { styled } from '@stitches';
+
+const MainContainer = styled('main', {
+  minHeight: '100vh',
+  width: '100%',
+});
 
 export const Layout: React.FC = ({ children }) => {
   return (
-    <div>
-      <GlobalCss />
+    <MainContainer>
+      <Header />
       {children}
-    </div>
+      <Footer />
+    </MainContainer>
   );
 };

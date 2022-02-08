@@ -1,4 +1,5 @@
 import { createStitches } from '@stitches/react';
+import type * as Stitches from '@stitches/react';
 
 export const {
   styled,
@@ -16,6 +17,13 @@ export const {
       background: '#16151A',
       forground: '#A6A6A6',
       white: '#ffffff',
+      primaryColor: '#B197FC',
+      ring: '#9775FA',
+      gradient:
+        'linear-gradient(90deg, #B197FC 5.65%, rgba(255, 145, 237, 0.59) 68.94%, rgba(199, 180, 255, 0.5) 113.57%)',
+      gradient2:
+        'linear-gradient(90deg, #16151A 0%, rgba(36, 34, 41, 0.8) 51.21%, #2F2D36 98.73%)',
+      borderColor: '#242229',
     },
     fonts: {
       default: `-apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
@@ -39,22 +47,6 @@ export const {
       11: '4.4rem',
       12: '4.8rem',
       14: '5.6rem',
-      16: '6.4rem',
-      20: '8rem',
-      24: '9.6rem',
-      28: '11.2rem',
-      32: '12.8rem',
-      36: '14.4rem',
-      40: '16rem',
-      44: '17.6rem',
-      48: '19.2rem',
-      52: '20.8rem',
-      56: '22.4rem',
-      60: '24.0rem',
-      64: '25.6rem',
-      72: '28.8rem',
-      80: '32rem',
-      96: '38.4rem',
     },
     radii: {
       xs: '0.2rem',
@@ -114,5 +106,15 @@ export const {
     md: '(min-width: 768px)',
     lg: '(min-width: 1024px)',
     xl: '(min-width: 1280px)',
+  },
+  utils: {
+    px: (value: Stitches.PropertyValue<'paddingLeft'>) => ({
+      paddingLeft: value,
+      paddingRight: value,
+    }),
+    ring: (value: Stitches.PropertyValue<'boxShadow'>) => ({
+      outline: 'none',
+      boxShadow: `${value} $colors$ring`,
+    }),
   },
 });

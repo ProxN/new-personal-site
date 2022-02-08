@@ -1,10 +1,18 @@
-import { Layout } from '@components/Layout';
+import { AboutSection } from '@components/AboutSection';
+import { BlogSection } from '@components/BlogSection';
+import { ContactSection } from '@components/ContactSection';
+import { HeroSection } from '@components/HeroSection';
+import { WorkSection } from '@components/WorkSection';
 
 const Index = () => {
   return (
-    <Layout>
-      <div>hello world</div>
-    </Layout>
+    <>
+      <HeroSection />
+      <AboutSection />
+      <WorkSection />
+      <BlogSection />
+      <ContactSection />
+    </>
   );
 };
 
