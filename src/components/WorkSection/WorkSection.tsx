@@ -10,6 +10,23 @@ const DynamicProject = dynamic<ProjectProps>(() =>
 
 const data = [
   {
+    title: 'Instagram Clone',
+    image: '/instagram_clone.png',
+    description:
+      'An instagram clone with nextjs, Express, Graphql and postgres',
+    tech: ['Next.js', 'Graphql', 'Express', 'Postgres', 'Github actions'],
+    links: [
+      {
+        type: 'code',
+        url: 'https://github.com/ProxN/instagram-clone',
+      },
+      {
+        type: 'demo',
+        url: 'https://kanapps.xyz',
+      },
+    ],
+  },
+  {
     title: 'Fortnite Stats',
     image: '/fortnite_tracker.png',
     description:
