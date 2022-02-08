@@ -38,7 +38,7 @@ export const ContactSection = () => {
           <ContactLinks>
             {links.map(({ name, link, Icon }) => (
               <li key={`contact-${name}`}>
-                <ContactLink href={link} target='_blank'>
+                <ContactLink href={link} target='_blank' rel='noopener'>
                   <ContactIcon>
                     <Icon />
                   </ContactIcon>

@@ -49,7 +49,7 @@ export const HeroSection = () => {
             <Line />
             <Icons>
               {socialLinks.map(({ name, Icon, link }) => (
-                <IconBox key={name} href={link} target='_blank'>
+                <IconBox key={name} href={link} target='_blank' rel='noopener'>
                   <IconSVG label='name'>
                     <Icon />
                   </IconSVG>

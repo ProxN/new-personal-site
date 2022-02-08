@@ -1,9 +1,6 @@
 import { globalCss } from '@stitches';
 
 const Css = globalCss({
-  '@import': [
-    "url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto:wght@400;500;700&display=swap')",
-  ],
   '*,*::before,*::after': {
     margin: 0,
     padding: 0,

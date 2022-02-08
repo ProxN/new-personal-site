@@ -22,16 +22,18 @@ export const Header = () => {
   return (
     <HeaderContainer>
       <HeaderContent>
-        <HeaderLogo tabIndex={0}>
-          <Image
-            alt='ayoubkanoun.com'
-            src='/logo.svg'
-            layout='responsive'
-            height='100%'
-            width='100%'
-            priority
-          />
-        </HeaderLogo>
+        <NextLink href='/'>
+          <HeaderLogo tabIndex={0}>
+            <Image
+              alt='ayoubkanoun.com'
+              src='/logo.svg'
+              layout='responsive'
+              height='100%'
+              width='100%'
+              priority
+            />
+          </HeaderLogo>
+        </NextLink>
         <Nav>
           <NavLinks>
             <NavItem>
@@ -50,12 +52,14 @@ export const Header = () => {
               </NextLink>
             </NavItem>
             <NavItem>
-              <ResumeLink>
-                <span>
-                  <ArrowSVG />
-                </span>
-                Resume
-              </ResumeLink>
+              <NextLink href='/'>
+                <ResumeLink>
+                  <span>
+                    <ArrowSVG />
+                  </span>
+                  Resume
+                </ResumeLink>
+              </NextLink>
             </NavItem>
           </NavLinks>
         </Nav>
@@ -83,7 +87,9 @@ export const Header = () => {
                     </NextLink>
                   </NavItem>
                   <NavItem>
-                    <ResumeLink>Resume</ResumeLink>
+                    <NextLink href='/'>
+                      <ResumeLink>Resume</ResumeLink>
+                    </NextLink>
                   </NavItem>
                 </NavLinks>
               </NavMobile>

@@ -1,7 +1,12 @@
+import dynamic from 'next/dynamic';
 import { Container } from '@components/Container';
 import { Heading } from '@components/Heading';
-import { Project } from '@components/Project';
+import type { ProjectProps } from '@components/Project';
 import { Projects, WorkContainer } from './WorkSection-styles';
+
+const DynamicProject = dynamic<ProjectProps>(() =>
+  import('@components/Project').then((mod) => mod.Project)
+);
 
 const data = [
   {
@@ -83,7 +88,7 @@ export const WorkSection = () => {
         </Heading>
         <Projects>
           {data.map((el) => (
-            <Project key={el.title} {...el} />
+            <DynamicProject key={el.title} {...el} />
           ))}
         </Projects>
       </Container>

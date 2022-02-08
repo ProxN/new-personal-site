@@ -18,7 +18,7 @@ type Link = {
   type: string;
   url: string;
 };
-interface ProjectProps {
+export interface ProjectProps {
   title: string;
   image: string;
   description: string;
@@ -34,7 +34,7 @@ export const Project: React.FC<ProjectProps> = ({
   title,
 }) => {
   return (
-    <ProjectContainer href={links[1].url} target='_blank'>
+    <ProjectContainer href={links[1].url} target='_blank' rel='noopener'>
       <ProjectImage>
         <Image src={image} alt='dfg' layout='fill' objectFit='cover' />
       </ProjectImage>
@@ -43,7 +43,12 @@ export const Project: React.FC<ProjectProps> = ({
           <ProjectTitle>{title}</ProjectTitle>
           <div>
             {links.map((el) => (
-              <ProjectLink key={el.url} href={el.url} target='_blank'>
+              <ProjectLink
+                key={el.url}
+                href={el.url}
+                target='_blank'
+                rel='noopener'
+              >
                 <IconContainer label={el.type}>
                   {el.type === 'code' ? <GithubSVG /> : <LinkSVG />}
                 </IconContainer>
