@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import { Articles } from '@components/Articles';
 import BlogCard from '@components/BlogCard/BlogCard';
 import { ArticleMetaData, getARticles } from '@lib/api';
@@ -12,6 +13,9 @@ const TagPage = ({
 }) => {
   return (
     <Articles title={tag}>
+      <Head>
+        <title>Ayoub Idelkanoun - {tag}</title>
+      </Head>
       {articles.map((el) => (
         <BlogCard key={el.slug} {...el} />
       ))}
