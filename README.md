@@ -2,12 +2,12 @@
 
 My Portfolio website.
 
-Made with [Nextjs](https://nextjs.org/) and Hosted on [Netlify](https://www.vercel.com/).
+Made with [Nextjs](https://nextjs.org/) and Hosted on [Vercel](https://www.vercel.com/).
 
 ## Install dependencies
 
 ```javascript
-yarn;
+yarn
 ```
 
 ## Run development server
