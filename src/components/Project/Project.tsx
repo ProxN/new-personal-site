@@ -34,8 +34,8 @@ export const Project: React.FC<ProjectProps> = ({
   title,
 }) => {
   return (
-    <ProjectContainer href={links[1].url} target='_blank' rel='noopener'>
-      <ProjectImage>
+    <ProjectContainer>
+      <ProjectImage href={links[1].url} target='_blank' rel='noopener'>
         <Image src={image} alt='dfg' layout='fill' objectFit='cover' />
       </ProjectImage>
       <ProjectInfo>

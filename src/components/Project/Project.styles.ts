@@ -1,18 +1,18 @@
 import * as AccessibleIcon from '@radix-ui/react-accessible-icon';
 import { styled } from '@stitches';
 
-export const ProjectContainer = styled('a', {
+export const ProjectContainer = styled('div', {
   backgroundImage: '$gradient2',
   borderRadius: '$sm',
   overflow: 'hidden',
   border: '1px solid $borderColor',
 
-  '&:focus': {
+  '&:focus-within': {
     ring: '0 0 2px',
   },
 });
 
-export const ProjectImage = styled('div', {
+export const ProjectImage = styled('a', {
   cursor: 'pointer',
   position: 'relative',
   display: 'block',
@@ -28,6 +28,10 @@ export const ProjectImage = styled('div', {
     bottom: 0,
     zIndex: '$1',
     background: 'rgba(0,0,0,.24)',
+  },
+
+  '&:focus': {
+    boxShadow: 'none',
   },
 });
 

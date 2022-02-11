@@ -1,15 +1,14 @@
+import BlogCard from '@components/BlogCard/BlogCard';
 import { Container } from '@components/Container';
 import { Heading } from '@components/Heading';
-import {
-  Blog,
-  BlogContainer,
-  BlogDescription,
-  Blogs,
-  BlogTime,
-  BlogTitle,
-} from './BlogSection-styles';
+import { ArticleMetaData } from '@lib/api';
+import { BlogContainer, Blogs } from './BlogSection-styles';
 
-export const BlogSection = () => {
+interface BlogSectionProps {
+  articles: ArticleMetaData[];
+}
+
+export const BlogSection: React.FC<BlogSectionProps> = ({ articles }) => {
   return (
     <BlogContainer>
       <Container>
@@ -17,24 +16,9 @@ export const BlogSection = () => {
           <span>Recent</span> Articles
         </Heading>
         <Blogs>
-          <Blog>
-            <BlogTitle>What is Lorem Ipsum?</BlogTitle>
-            <BlogDescription>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry&apos;s standard dummy
-              text ever since the 1500s
-            </BlogDescription>
-            <BlogTime>June 20 2021 • 2 min read</BlogTime>
-          </Blog>
-          <Blog>
-            <BlogTitle>What is Lorem Ipsum?</BlogTitle>
-            <BlogDescription>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry&apos;s standard dummy
-              text ever since the 1500s
-            </BlogDescription>
-            <BlogTime>June 20 2021 • 2 min read</BlogTime>
-          </Blog>
+          {articles.map((el) => (
+            <BlogCard key={el.slug} {...el} />
+          ))}
         </Blogs>
       </Container>
     </BlogContainer>

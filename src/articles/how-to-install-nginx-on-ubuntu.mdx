@@ -1,0 +1,204 @@
+---
+title: How to install Nginx on Ubuntu
+excerpt: NGINX is a free, open-source, high-performance HTTP server and reverses proxy, as well as an IMAP/POP3 proxy server. This article will guide how to install nginx and configure as a web server.
+tags:
+  - vps
+  - Nginx
+
+date: '2022-02-11T00:00:00.322Z'
+---
+
+## Introduction
+
+NGINX is a free, open-source, high-performance HTTP server and reverses proxy, as well as an IMAP/POP3 proxy server. NGINX is known for its high performance, stability, rich feature set, simple configuration, and low resource consumption. This article will show you how to install Nginx on Ubuntu and use it as a  web server or reverse proxy.
+
+## Install Nginx
+
+```bash
+ssh user@hostname
+```
+
+- The&nbsp;`user`&nbsp;is the username of your server. (e.g.&nbsp;`root`)
+- The&nbsp;`hostname`&nbsp;is your server's public IP address. (e.g.&nbsp;`123.45.67.890`)
+
+After you press enter, a prompt will pop up asking for your password. When typing your password, you will not see anything in your terminal.
+
+<ImageContainer
+  src='https://res.cloudinary.com/proxn/image/upload/v1644452499/blogs/how-to-automate-your-deployment-process-with-gitHub-actions./image-1_cv3wgj.png'
+  alt='ssh to a virtual private server'
+  height={1}
+  width={5}
+/>
+
+Before you start installing Nginx. You need to make sure that you have the latest updates installed.
+
+```shell
+sudo apt update
+```
+
+<ImageContainer
+  src='https://res.cloudinary.com/proxn/image/upload/v1644452998/blogs/how-to-automate-your-deployment-process-with-gitHub-actions./image-2_cyrtar.png'
+  alt='Update packages'
+  height={4}
+  width={8}
+/>
+
+Install Nginx from Ubuntu package manager.
+
+```shell
+sudo apt install nginx
+```
+
+To verify if Nginx is running. Run the following command:
+
+```shell
+sudo systemctl status nginx
+```
+
+<ImageContainer
+  src='https://res.cloudinary.com/proxn/image/upload/v1644453412/blogs/how-to-automate-your-deployment-process-with-gitHub-actions./image-3_rjke7p.png'
+  alt='Nginx status'
+  height={1}
+  width={5}
+/>
+
+## Grant access to Nginx
+
+You must enable Nginx through the firewall software to allow access.
+
+Display available applications that ufw knows by running the following command:
+
+```shell
+sudo ufw app list
+```
+
+You will get the following output:
+
+<ImageContainer
+  src='https://res.cloudinary.com/proxn/image/upload/v1644453691/blogs/how-to-automate-your-deployment-process-with-gitHub-actions./image-4_dfyzyg.png'
+  alt='available applications that ufw knows'
+  height={2}
+  width={7}
+/>
+
+We only want to allow HTTP traffic on port 80. Run the following command:
+
+```shell
+sudo ufw allow 'Nginx HTTP'
+```
+
+## Test Nginx web server
+
+Navigate to your browser and Enter your server's public IP address or domain name.
+
+You should see Nginx default page.
+
+<ImageContainer
+  src='https://res.cloudinary.com/proxn/image/upload/v1644521969/blogs/how-to-automate-your-deployment-process-with-gitHub-actions./image-5_pjsbza.png'
+  alt='Nginx default web page'
+  height={2}
+  width={6}
+/>
+
+## NGINX Configuration
+
+Now that you have learned how to install and set up Nginx. It's time to configure Nginx as a reverse proxy to point to your API.
+
+1. Remove the default Nginx config
+
+```shell
+sudo unlink /etc/nginx/sites-enabled/default
+```
+
+Restart Nginx by running the following command
+
+```shell
+sudo systemctl restart nginx.service
+```
+
+2. Create index.html file
+
+```shell
+mkdir -p /var/www/test.com/html
+sudo nano /var/www/test.com/html/index.html
+```
+
+add the following HTML code
+
+```html
+<html>
+  <head>
+    <title>Hello world!!</title>
+  </head>
+  <body>
+    <h1>Hello world!!</h1>
+  </body>
+</html>
+```
+
+3. Create a config file for your app
+
+```shell
+sudo nano /etc/nginx/sites-available/test.com
+```
+
+Add the following config below:
+
+```shell
+server {
+
+        listen 80;
+        root /var/www/test.com/html;
+        index index.html;
+
+        server_name _;
+
+        location / {
+        try_files $uri $uri/ =404;
+    }
+}
+```
+
+5. Enable the server by symlinking to the /etc/nginx/sites-enabled directory
+
+```shell
+sudo ln -s /etc/nginx/sites-available/test.com /etc/nginx/sites-enabled/
+```
+
+Change `test.com` with your config name.
+
+6. Restart Nginx service
+
+```bash
+sudo systemctl restart nginx.service
+```
+
+7. Verify your configuration
+
+```shell
+sudo nginx -t
+```
+
+<ImageContainer
+  src='https://res.cloudinary.com/proxn/image/upload/v1644454588/blogs/how-to-automate-your-deployment-process-with-gitHub-actions./image-7_ytdsav.png'
+  alt='Nginx verification'
+  height={1}
+  width={5}
+/>
+
+8. Verify in the browser
+
+Open the browser and navigate to your server IP address, You should see the following:
+
+<ImageContainer
+  src='https://res.cloudinary.com/proxn/image/upload/v1644532810/blogs/how-to-automate-your-deployment-process-with-gitHub-actions./image-66_kyqqrp.png'
+  alt='Web page'
+  height={1}
+  width={5}
+/>
+
+## Conclusion
+
+This article showed you how to install and configure Nginx on Ubuntu, You can now start deploying your apps and use Nginx as a web server or reverse proxy.
+
+- [Nginx Wiki](https://nginx.org/en/docs/)

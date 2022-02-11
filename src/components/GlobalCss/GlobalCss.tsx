@@ -33,6 +33,10 @@ const Css = globalCss({
     letterSpacing: '0.02em',
     margin: 0,
   },
+
+  'a:focus': {
+    ring: '0 0 0 2px',
+  },
 });
 
 export const GlobalCss = () => {

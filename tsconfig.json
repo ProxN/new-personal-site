@@ -48,7 +48,8 @@
       "**/*.tsx" ],
     "exclude": [
       "node_modules",
-      "next.config.js"
+      "next.config.js",
+      "next-sitemap.js"
     ]
   }
   

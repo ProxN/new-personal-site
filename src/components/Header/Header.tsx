@@ -37,22 +37,22 @@ export const Header = () => {
         <Nav>
           <NavLinks>
             <NavItem>
-              <NextLink href='/#work'>
-                <NavLink tabIndex={0}>Work</NavLink>
-              </NextLink>
-            </NavItem>
-            {/* <NavItem>
-              <NextLink href='/#work'>
-                <NavLink tabIndex={0}>Blog</NavLink>
-              </NextLink>
-            </NavItem> */}
-            <NavItem>
-              <NextLink href='/#about'>
-                <NavLink tabIndex={0}>About</NavLink>
+              <NextLink href='/#work' passHref>
+                <NavLink>Work</NavLink>
               </NextLink>
             </NavItem>
             <NavItem>
-              <NextLink href='/'>
+              <NextLink href='/blog' passHref>
+                <NavLink>Blog</NavLink>
+              </NextLink>
+            </NavItem>
+            <NavItem>
+              <NextLink href='/#about' passHref>
+                <NavLink>About</NavLink>
+              </NextLink>
+            </NavItem>
+            <NavItem>
+              <NextLink href='/' passHref>
                 <ResumeLink>
                   <span>
                     <ArrowSVG />
@@ -74,20 +74,22 @@ export const Header = () => {
               <NavMobile>
                 <NavLinks>
                   <NavItem>
-                    <NextLink href='/#work'>
-                      <NavLink tabIndex={0}>Work</NavLink>
-                    </NextLink>
-                  </NavItem>
-                  {/* <NavItem>
-                    <NavLink href='#blog'>Blog</NavLink>
-                  </NavItem> */}
-                  <NavItem>
-                    <NextLink href='/#about'>
-                      <NavLink tabIndex={0}>About</NavLink>
+                    <NextLink href='/#work' passHref>
+                      <NavLink>Work</NavLink>
                     </NextLink>
                   </NavItem>
                   <NavItem>
-                    <NextLink href='/'>
+                    <NextLink href='/blog' passHref>
+                      <NavLink>Blog</NavLink>
+                    </NextLink>
+                  </NavItem>
+                  <NavItem>
+                    <NextLink href='/#about' passHref>
+                      <NavLink>About</NavLink>
+                    </NextLink>
+                  </NavItem>
+                  <NavItem>
+                    <NextLink href='/' passHref>
                       <ResumeLink>Resume</ResumeLink>
                     </NextLink>
                   </NavItem>

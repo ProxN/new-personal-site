@@ -1,20 +1,28 @@
 import { AboutSection } from '@components/AboutSection';
-// import { BlogSection } from '@components/BlogSection';
+import { BlogSection } from '@components/BlogSection';
 import { ContactSection } from '@components/ContactSection';
 import { HeroSection } from '@components/HeroSection';
-import Seo from '@components/Seo/Seo';
 import { WorkSection } from '@components/WorkSection';
+import { ArticleMetaData, getARticles } from '@lib/api';
 
-const Index = () => {
+const Index = ({ articles }: { articles: ArticleMetaData[] }) => {
   return (
-    <Seo>
+    <>
       <HeroSection />
       <AboutSection />
       <WorkSection />
-      {/* <BlogSection /> */}
+      <BlogSection articles={articles} />
       <ContactSection />
-    </Seo>
+    </>
   );
+};
+
+export const getStaticProps = async () => {
+  const articles = getARticles()
+    .map((el) => el.metadata)
+    .slice(0, 2);
+
+  return { props: { articles } };
 };
 
 export default Index;

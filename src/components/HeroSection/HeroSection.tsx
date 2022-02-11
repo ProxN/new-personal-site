@@ -42,8 +42,8 @@ export const HeroSection = () => {
             I&apos;m a <GradientSpan>Full-Stack Developer</GradientSpan> based
             in Morocco.
           </SubHeading>
-          <NextLink href='/#work'>
-            <ButtonLink tabIndex={0}>My Work</ButtonLink>
+          <NextLink href='/#work' passHref>
+            <ButtonLink>My Work</ButtonLink>
           </NextLink>
           <SocialLinks>
             <Line />
