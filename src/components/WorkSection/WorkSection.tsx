@@ -90,7 +90,7 @@ const data = [
       },
       {
         type: 'demo',
-        url: 'https://anime-chart.netlify.com/',
+        url: 'https://react-anime-chart.vercel.app/',
       },
     ],
   },
