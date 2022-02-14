@@ -2,12 +2,7 @@ import { styled } from '@stitches';
 import * as AccessibleIcon from '@radix-ui/react-accessible-icon';
 
 export const HeroContainer = styled('section', {
-  height: '100vh',
-  paddingTop: '22rem',
-
-  '@xl': {
-    height: '100%',
-  },
+  padding: '15rem 0',
 });
 
 export const HeroInfo = styled('div', {
@@ -26,10 +21,6 @@ export const SubHeading = styled('p', {
   '@md': {
     fontSize: '3rem',
   },
-
-  '@xl': {
-    fontSize: '4rem',
-  },
 });
 
 export const Heading = styled('h1', {
@@ -41,10 +32,6 @@ export const Heading = styled('h1', {
 
   '@md': {
     fontSize: '7.2rem',
-  },
-
-  '@xl': {
-    fontSize: '8.2rem',
   },
 });
 

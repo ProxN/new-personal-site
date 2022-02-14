@@ -52,7 +52,7 @@ export const Header = () => {
               </NextLink>
             </NavItem>
             <NavItem>
-              <NextLink href='/' passHref>
+              <NextLink href='/resume.pdf' passHref>
                 <ResumeLink>
                   <span>
                     <ArrowSVG />
@@ -89,7 +89,7 @@ export const Header = () => {
                     </NextLink>
                   </NavItem>
                   <NavItem>
-                    <NextLink href='/' passHref>
+                    <NextLink href='/resume.pdf' passHref>
                       <ResumeLink>Resume</ResumeLink>
                     </NextLink>
                   </NavItem>
